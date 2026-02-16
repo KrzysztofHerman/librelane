@@ -1071,7 +1071,8 @@ class Filler(KLayoutStep):
         self.run_subprocess(
             [
                 "klayout",
-                "-b",
+                "-n",
+                "sg13cmos5l",
                 "-zz",
                 "-r",
                 script,
