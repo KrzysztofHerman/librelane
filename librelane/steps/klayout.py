@@ -413,7 +413,7 @@ class DRC(KLayoutStep):
             metrics_updates = self.run_sky130(state_in, **kwargs)
         elif self.config["PDK"] in ["gf180mcuA", "gf180mcuB", "gf180mcuC", "gf180mcuD"]:
             metrics_updates = self.run_gf180mcu(state_in, **kwargs)
-        elif self.config["PDK"] in ["ihp-sg13g2"]:
+        elif self.config["PDK"] in ["ihp-sg13g2, ihp-sg13gcmos5l"]:
             metrics_updates = self.run_ihp_sg13g2(state_in, **kwargs)
         else:
             metrics_updates = self.run_generic(state_in, **kwargs)
