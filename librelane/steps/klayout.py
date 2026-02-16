@@ -954,7 +954,7 @@ class SealRing(KLayoutStep):
 
         return views_updates, {}
 
-    def run_ihp_sg13g2(
+    def run_ihp_sg13cmos5l(
         self, state_in: State, **kwargs
     ) -> Tuple[ViewsUpdate, MetricsUpdate]:
         views_updates: ViewsUpdate = {}
