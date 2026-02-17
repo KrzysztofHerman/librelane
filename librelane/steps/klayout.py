@@ -1031,6 +1031,14 @@ class Filler(KLayoutStep):
     def run(self, state_in: State, **kwargs) -> Tuple[ViewsUpdate, MetricsUpdate]:
         metrics_updates: MetricsUpdate = {}
         views_updates: ViewsUpdate = {}
+
+        
+        if not self.config["KLAYOUT_FILLER_SCRIPT"]:
+            self.warn(
+                f"KLAYOUT_FILLER_SCRIPT is unset. KLayout.Filler may not be supported for the {self.config['PDK']} PDK. This step will be skipped."
+            )
+            return views_updates, metrics_updates
+        
         if self.config["PDK"] in ["ihp-sg13g2", "ihp-sg13cmos5l"]:
             views_updates, metrics_updates = self.run_ihp_sg13g2(state_in, **kwargs)
         else:
